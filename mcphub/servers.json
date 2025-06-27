@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "github": {
+      "url": "https://api.githubcopilot.com/mcp/",
+      "disabled": true
+    },
+    "github-pat": {
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer <github_pat>"
+      },
+      "disabled": false
+    }
+  },
+  "nativeMCPServers": {
+    "mcphub": {
+      "disabled": false,
+      "disabled_tools": []
+    },
+    "neovim": {
+      "disabled": false,
+      "custom_instructions": {
+        "disabled": false
+      },
+      "disabled_tools": []
+    }
+  }
+}

@@ -30,6 +30,13 @@ your distro puts it). This will allow `mcp-hub` to point at your desired "askpas
 tool to prompt you for a `sudo` credential on-demand during update. Otherwise,
 you'll have to install/update it manually with `npm -g install mcp-hub`.
 
+Additionally, in order to configure additional servers beyond a couple built-in
+ones, a configuration file needs to be written to `~/.config/mcphub/servers.json`.
+An example of this file is located at [`mcphub/servers.json`](./mcphub/servers.json).
+This configuration contains some example MCP servers I use, including the public
+GitHub one. You'll need to create a new GitHub PAT and add it to the appropriate
+place in the file in order to use it.
+
 ## GenAI LLM Code Gneration
 
 This configuration installs `CodeCompanion`, `Avante`, and `Copilot`/`CopilotChat`.
