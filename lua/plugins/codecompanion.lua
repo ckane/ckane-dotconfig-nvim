@@ -8,9 +8,9 @@ return {
 			dependencies = {
 				"nvim-lua/plenary.nvim",
 			},
+			-- For mcp-hub install/updates to work, make sure an askpass is configured in /etc/sudo.conf
 			build = "sudo npm install -g mcp-hub@latest",
 			config = function()
-				-- For MCPHUB to work, make sure an askpass is configured in /etc/sudo.conf
 				require("mcphub").setup({
 					native_servers = {},
 					extensions = {
