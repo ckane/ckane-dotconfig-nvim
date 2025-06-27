@@ -65,9 +65,12 @@ return {
 		},
 		strategies = {
 			--NOTE: Change the adapter as required
-			chat = { adapter = "azure_openai" },
-			cmd = { adapter = "azure_openai" },
-			inline = { adapter = "azure_openai" },
+			chat = { adapter = "copilot" },
+			cmd = { adapter = "copilot" },
+			inline = { adapter = "copilot" },
+			-- chat = { adapter = "azure_openai" },
+			-- cmd = { adapter = "azure_openai" },
+			-- inline = { adapter = "azure_openai" },
 		},
 		extensions = {
 			mcphub = {
