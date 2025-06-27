@@ -40,3 +40,9 @@ want to use all 3.
 
 The configs provided here use Copilot by default, but there are some examples
 for using Azure OpenAI instead that can be utilized for further customization.
+
+## LazyExtras
+
+The `lazyvim.json` in the root of this repository is the configuration file
+for `LazyExtras` and should populate that with some useful plugins I have
+hand-selected.
