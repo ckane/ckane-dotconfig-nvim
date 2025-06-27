@@ -16,6 +16,7 @@ Install dependency packages appropriate for your OS distribution:
 nodejs
 fzf
 skim
+...
 ```
 
 Use the `Lazy`, `LazyExtras`, and `checkhealth` commands to get visibility into
