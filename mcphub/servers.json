@@ -10,6 +10,12 @@
         "Authorization": "Bearer <github_pat>"
       },
       "disabled": false
+    },
+    "fetch": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-fetch"
+      ]
     }
   },
   "nativeMCPServers": {
