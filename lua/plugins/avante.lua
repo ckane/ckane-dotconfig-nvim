@@ -6,6 +6,9 @@ return {
 		-- add any opts here
 		-- for example
 		provider = "copilot",
+
+		tokenizer = "tiktoken",
+
 		providers = {
 			azure = {
 				endpoint = "<changeme>",

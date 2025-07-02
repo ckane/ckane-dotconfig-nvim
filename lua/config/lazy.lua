@@ -24,6 +24,25 @@ vim.g.maplocalleader = "\t" -- Map TAB to local-leader
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
+		-- Load blink-cmp-avante first
+		{
+			"saghen/blink.cmp",
+			dependencies = {
+				"Kaiser-Yang/blink-cmp-avante", -- Required for blink.cmp
+			},
+			opts = {
+				sources = {
+					default = { "avante", "lsp", "path", "snippets", "buffer" },
+					providers = {
+						avante = {
+							module = "blink-cmp-avante",
+							name = "Avante",
+							opts = {},
+						},
+					},
+				},
+			},
+		},
 		-- Enable the LazyExtras plugins and load the enabled ones
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
 		-- import plugins from ~/.config/nvim/lua/plugins
