@@ -7,6 +7,42 @@ return {
 		-- for example
 		provider = "copilot",
 
+		-- Make sure the MCP prompts and servers are in the system prompt
+		system_prompt = function()
+			local hub = require("mcphub").get_hub_instance()
+			return hub and hub:get_active_servers_prompt() or ""
+		end,
+
+		-- Populate the Avante tools list with the tools from MCP Hub
+		custom_tools = function()
+			return {
+				require("mcphub.extensions.avante").mcp_tool(),
+			}
+		end,
+
+		-- Disable some tools we want to use MCP alternatives for
+		disabled_tools = {
+			"list_files",
+			"search_files",
+			"read_file",
+			"create_file",
+			"rename_file",
+			"delete_file",
+			"create_dir",
+			"rename_dir",
+			"delete_dir",
+			"bash",
+		},
+
+		-- Use alternative input plugin (snacks)
+		input = {
+			provider = "snacks",
+			provider_opts = {
+				title = "Avante Input",
+				icon = " ",
+			},
+		},
+
 		tokenizer = "tiktoken",
 
 		providers = {
@@ -15,15 +51,6 @@ return {
 				deployment = "<changeme>",
 				api_version = "2025-04-01-preview",
 				disable_tools = false,
-				system_prompt = function()
-					local hub = require("mcphub").get_hub_instance()
-					return hub and hub:get_active_servers_prompt() or ""
-				end,
-				custom_tools = function()
-					return {
-						require("mcphub.extensions.avante").mcp_tool(),
-					}
-				end,
 				extra_request_body = {
 					-- timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
 					-- temperature = 0.75,
@@ -33,15 +60,6 @@ return {
 			},
 			copilot = {
 				disable_tools = false,
-				system_prompt = function()
-					local hub = require("mcphub").get_hub_instance()
-					return hub and hub:get_active_servers_prompt() or ""
-				end,
-				custom_tools = function()
-					return {
-						require("mcphub.extensions.avante").mcp_tool(),
-					}
-				end,
 			},
 		},
 	},
