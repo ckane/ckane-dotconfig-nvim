@@ -50,6 +50,26 @@ return {
 	-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
 	dependencies = {
 		{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+		{
+			"ravitemer/mcphub.nvim",
+			dependencies = {
+				"nvim-lua/plenary.nvim",
+			},
+			-- For mcp-hub install/updates to work, make sure an askpass is configured in /etc/sudo.conf
+			build = "sudo npm install -g mcp-hub@latest",
+			config = function()
+				require("mcphub").setup({
+					native_servers = {},
+					extensions = {
+						avante = {
+							enabled = true,
+							make_slash_commands = true,
+							make_vars = true,
+						},
+					},
+				})
+			end,
+		},
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
 		--- The below dependencies are optional,
