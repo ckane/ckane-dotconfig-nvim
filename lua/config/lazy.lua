@@ -69,3 +69,14 @@ vim.keymap.set("n", "<leader>o", "<cmd>Outline<cr>", { desc = "Toggle Outline" }
 
 -- Setup NeoTree keymap (<leader>e)
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle NeoTree" })
+
+if vim.g.neovide then
+	-- If using neovide, change the font to something I like better
+	vim.opt.guifont = "Hasklug Nerd Font:h9"
+	-- Set the neovide transparency to something slightly transparent but still readable
+	vim.g.neovide_opacity = 0.97
+	-- Enable smooth scrolling
+	vim.g.neovide_smooth_scroll = true
+	-- Enable cursor animation
+	vim.g.neovide_cursor_animation_length = 0.1
+end
