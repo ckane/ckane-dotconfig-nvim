@@ -35,8 +35,10 @@ Additionally, in order to configure additional servers beyond a couple built-in
 ones, a configuration file needs to be written to `~/.config/mcphub/servers.json`.
 An example of this file is located at [`mcphub/servers.json`](./mcphub/servers.json).
 This configuration contains some example MCP servers I use, including the public
-GitHub one. You'll need to create a new GitHub PAT and add it to the appropriate
-place in the file in order to use it.
+GitHub one. Two implementations of that are available in the `servers.json`. One
+of these requires a PAT, and the other one will utilize `gh auth token` to get
+the current token using the GitHub CLI tool, if installed (so it works OOTB if
+you have that installed).
 
 ## GenAI LLM Code Gneration
 
