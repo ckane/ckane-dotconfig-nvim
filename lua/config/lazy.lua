@@ -72,7 +72,7 @@ vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle Neo
 
 if vim.g.neovide then
 	-- If using neovide, change the font to something I like better
-	vim.opt.guifont = "Hasklug Nerd Font:h9"
+	vim.opt.guifont = "Lilex Nerd Font Medium:h9"
 	-- Set the neovide transparency to something slightly transparent but still readable
 	vim.g.neovide_opacity = 0.97
 	-- Enable smooth scrolling
