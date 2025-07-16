@@ -19,6 +19,14 @@
       "args": [
         "mcp-server-fetch"
       ]
+    },
+    "uv-docs": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/StevenBtw/uv-docs-mcp",
+        "uv-docs"
+      ]
     }
   },
   "nativeMCPServers": {
